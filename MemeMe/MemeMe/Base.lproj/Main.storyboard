@@ -28,11 +28,14 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Take a Picture" style="plain" id="es7-Nx-LN1">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mv3-EJ-iEN">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mv3-EJ-iEN">
                                             <rect key="frame" x="125.5" y="10" width="131" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Take a Picture"/>
+                                            <connections>
+                                                <action selector="cameraIMagePickerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zyr-TN-Tlg"/>
+                                            </connections>
                                         </button>
                                     </barButtonItem>
                                 </items>
@@ -51,6 +54,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="Mv3-EJ-iEN" id="fEN-fS-1mP"/>
                         <outlet property="imageView" destination="YUp-f4-iKh" id="2GV-Ot-Znb"/>
                     </connections>
                 </viewController>
