@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-f4-iKh">
+                                <rect key="frame" x="10" y="310" width="394" height="280"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-tO-NTv">
+                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Pick a Photo" id="zBg-lG-E95">
+                                        <connections>
+                                            <action selector="imagePickerAction:" destination="BYZ-38-t0r" id="mjO-OK-Chc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Take a Picture" style="plain" id="es7-Nx-LN1">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mv3-EJ-iEN">
+                                            <rect key="frame" x="125.5" y="10" width="131" height="34.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Take a Picture"/>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="F5j-RU-2zc"/>
+                            <constraint firstItem="YUp-f4-iKh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="266" id="KvN-Kt-hZx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YUp-f4-iKh" secondAttribute="trailing" constant="10" id="Luu-QV-sIv"/>
+                            <constraint firstItem="YUp-f4-iKh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="i5n-DG-fuN"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="YUp-f4-iKh" secondAttribute="bottom" constant="257" id="lVS-xn-orv"/>
+                            <constraint firstAttribute="bottom" secondItem="d9T-tO-NTv" secondAttribute="bottom" id="rrK-Hy-BUV"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zqt-jB-1RN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="YUp-f4-iKh" id="2GV-Ot-Znb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
