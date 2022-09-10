@@ -19,14 +19,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
 
-    @IBAction func imagePickerAction(_ sender: Any) {
+    @IBAction func photoLibraryImagePickerAction(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true)
     }
     
-    @IBAction func cameraIMagePickerAction(_ sender: Any) {
+    @IBAction func cameraImagePickerAction(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         
         if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
