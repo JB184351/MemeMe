@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    
     
     let topTextFieldDelegate = TopTextFieldDelegate()
     let bottomTextFieldDelegate = BottomTextFieldDelegate()
@@ -23,6 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         topTextField.delegate = topTextFieldDelegate
         bottomTextField.delegate = bottomTextFieldDelegate
+        saveButton.isEnabled = imageView.image == nil
         configureTextAttributes()
     }
     
@@ -53,6 +56,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
     }
+    
+    @IBAction func saveButtonAction(_ sender: Any) {
+        let savedMeme = generateMemedImage()
+        
+        let activityController = UIActivityViewController(activityItems: [savedMeme], applicationActivities: nil)
+        present(activityController, animated: true)
+        
+        // Quesiton, I don't understand the purpose of having this here, I know it was part of the project instructions
+        // but what does this do?
+        activityController.completionWithItemsHandler = { (activity, success, items, error) in
+            self.save()
+        }
+    }
+    
 
     @IBAction func photoLibraryImagePickerAction(_ sender: Any) {
         let imagePicker = UIImagePickerController()
@@ -141,6 +158,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     @objc private func keyboardWillHide(_ notification: Notification) {
         view.frame.origin.y = 0
+    }
+    
+    func save() {
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: generateMemedImage())
+    }
+    
+    func generateMemedImage() -> UIImage {
+
+        // TODO: Hide toolbar and navbar
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        // TODO: Show toolbar and navbar
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = false
+
+        return memedImage
     }
 }
 

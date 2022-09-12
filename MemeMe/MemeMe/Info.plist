@@ -4,6 +4,8 @@
 <dict>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Need to select a photo to create a meme with!</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Used to save a piece of media to the photo library</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Need the camera for taking photos</string>
 	<key>UIApplicationSceneManifest</key>

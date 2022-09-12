@@ -51,6 +51,17 @@
                                                     </connections>
                                                 </button>
                                             </barButtonItem>
+                                            <barButtonItem style="plain" id="1PN-zm-K0Y">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DGA-on-SJN">
+                                                    <rect key="frame" x="256.5" y="5" width="75" height="34.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                    <connections>
+                                                        <action selector="saveButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CP2-Qi-lZp"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
                                         </items>
                                     </toolbar>
                                 </subviews>
@@ -75,6 +86,7 @@
                         <outlet property="bottomTextField" destination="et3-3r-ZnR" id="yC5-Py-aQO"/>
                         <outlet property="cameraButton" destination="Mv3-EJ-iEN" id="MK8-bF-YWy"/>
                         <outlet property="imageView" destination="YUp-f4-iKh" id="2GV-Ot-Znb"/>
+                        <outlet property="saveButton" destination="DGA-on-SJN" id="h6E-4S-jNe"/>
                         <outlet property="topTextField" destination="1Yp-LJ-ULp" id="y1u-I7-CL8"/>
                     </connections>
                 </viewController>
