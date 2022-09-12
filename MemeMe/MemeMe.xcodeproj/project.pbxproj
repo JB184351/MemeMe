@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C228914E28CFE0EA0017E258 /* BottomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C228914D28CFE0EA0017E258 /* BottomTextFieldDelegate.swift */; };
+		C228915028CFF1CF0017E258 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C228914F28CFF1CF0017E258 /* Meme.swift */; };
 		C29C0F7C28CBE237000E1C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29C0F7B28CBE237000E1C7B /* AppDelegate.swift */; };
 		C29C0F7E28CBE237000E1C7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29C0F7D28CBE237000E1C7B /* SceneDelegate.swift */; };
 		C29C0F8028CBE237000E1C7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29C0F7F28CBE237000E1C7B /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		C228914D28CFE0EA0017E258 /* BottomTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDelegate.swift; sourceTree = "<group>"; };
+		C228914F28CFF1CF0017E258 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		C29C0F7828CBE237000E1C7B /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29C0F7B28CBE237000E1C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C29C0F7D28CBE237000E1C7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C29C0F7B28CBE237000E1C7B /* AppDelegate.swift */,
 				C29C0F7D28CBE237000E1C7B /* SceneDelegate.swift */,
 				C29C0F7F28CBE237000E1C7B /* ViewController.swift */,
+				C228914F28CFF1CF0017E258 /* Meme.swift */,
 				C2AE2B6028CFDF3300DAB0F6 /* TopTextFieldDelegate.swift */,
 				C228914D28CFE0EA0017E258 /* BottomTextFieldDelegate.swift */,
 				C29C0F8128CBE237000E1C7B /* Main.storyboard */,
@@ -147,6 +150,7 @@
 				C2AE2B6128CFDF3300DAB0F6 /* TopTextFieldDelegate.swift in Sources */,
 				C29C0F8028CBE237000E1C7B /* ViewController.swift in Sources */,
 				C29C0F7C28CBE237000E1C7B /* AppDelegate.swift in Sources */,
+				C228915028CFF1CF0017E258 /* Meme.swift in Sources */,
 				C29C0F7E28CBE237000E1C7B /* SceneDelegate.swift in Sources */,
 				C228914E28CFE0EA0017E258 /* BottomTextFieldDelegate.swift in Sources */,
 			);
