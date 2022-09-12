@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
@@ -57,6 +57,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         bottomTextField.defaultTextAttributes = memeTextAttributes
     }
     
+    // MARK: - Enables app to save/share meme
+    
     @IBAction func saveButtonAction(_ sender: Any) {
         let savedMeme = generateMemedImage()
         
@@ -70,6 +72,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         }
     }
     
+    // MARK: - Image Picker Actions
 
     @IBAction func photoLibraryImagePickerAction(_ sender: Any) {
         let imagePicker = UIImagePickerController()
@@ -121,19 +124,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         }
     }
     
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imageView.image = selectedImage
-            imageView.contentMode = .scaleAspectFit
-        }
-        
-        dismiss(animated: true)
-    }
+    // MARK: - Keyboard Notifications
     
     private func subscribedToKeyboardNotificaitons() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -160,6 +151,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         view.frame.origin.y = 0
     }
     
+    // MARK: - Methods for saving/sharing the meme
+    
     func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memeImage: generateMemedImage())
     }
@@ -181,6 +174,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         self.navigationController?.navigationBar.isHidden = false
 
         return memedImage
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+extension ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = selectedImage
+            imageView.contentMode = .scaleAspectFit
+        }
+        
+        dismiss(animated: true)
     }
 }
 
