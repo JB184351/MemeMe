@@ -16,45 +16,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-f4-iKh">
-                                <rect key="frame" x="10" y="310" width="394" height="280"/>
-                            </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-tO-NTv">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
-                                <items>
-                                    <barButtonItem title="Pick a Photo" id="zBg-lG-E95">
-                                        <connections>
-                                            <action selector="imagePickerAction:" destination="BYZ-38-t0r" id="mjO-OK-Chc"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Take a Picture" style="plain" id="es7-Nx-LN1">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mv3-EJ-iEN">
-                                            <rect key="frame" x="125.5" y="10" width="131" height="34.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Take a Picture"/>
-                                            <connections>
-                                                <action selector="cameraIMagePickerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zyr-TN-Tlg"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="m3D-Cg-ESI">
+                                <rect key="frame" x="8" y="114" width="414" height="738"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yp-LJ-ULp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-f4-iKh">
+                                        <rect key="frame" x="0.0" y="180" width="414" height="280"/>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="et3-3r-ZnR">
+                                        <rect key="frame" x="0.0" y="560" width="414" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-tO-NTv">
+                                        <rect key="frame" x="0.0" y="694" width="414" height="44"/>
+                                        <items>
+                                            <barButtonItem title="Pick a Photo" id="zBg-lG-E95">
+                                                <connections>
+                                                    <action selector="photoLibraryImagePickerAction:" destination="BYZ-38-t0r" id="kXf-u0-YbL"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Take a Picture" style="plain" id="es7-Nx-LN1">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mv3-EJ-iEN">
+                                                    <rect key="frame" x="125.5" y="5" width="131" height="34.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Take a Picture"/>
+                                                    <connections>
+                                                        <action selector="cameraImagePickerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfK-LL-Ium"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="d9T-tO-NTv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="F5j-RU-2zc"/>
-                            <constraint firstItem="YUp-f4-iKh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="266" id="KvN-Kt-hZx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YUp-f4-iKh" secondAttribute="trailing" constant="10" id="Luu-QV-sIv"/>
-                            <constraint firstItem="YUp-f4-iKh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="i5n-DG-fuN"/>
-                            <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="YUp-f4-iKh" secondAttribute="bottom" constant="257" id="lVS-xn-orv"/>
-                            <constraint firstAttribute="bottom" secondItem="d9T-tO-NTv" secondAttribute="bottom" id="rrK-Hy-BUV"/>
-                            <constraint firstItem="d9T-tO-NTv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zqt-jB-1RN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m3D-Cg-ESI" secondAttribute="bottom" constant="10" id="1a1-pv-GFZ"/>
+                            <constraint firstItem="m3D-Cg-ESI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="Tj9-AV-Kal"/>
+                            <constraint firstItem="m3D-Cg-ESI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="8" id="fpt-4C-t4Q"/>
+                            <constraint firstItem="m3D-Cg-ESI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="mi8-hY-YSm"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraButton" destination="Mv3-EJ-iEN" id="fEN-fS-1mP"/>
+                        <outlet property="cameraButton" destination="Mv3-EJ-iEN" id="MK8-bF-YWy"/>
                         <outlet property="imageView" destination="YUp-f4-iKh" id="2GV-Ot-Znb"/>
                     </connections>
                 </viewController>

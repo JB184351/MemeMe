@@ -21,9 +21,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
 
     @IBAction func photoLibraryImagePickerAction(_ sender: Any) {
         let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
+                imagePicker.delegate = self
+                imagePicker.sourceType = .photoLibrary
+                present(imagePicker, animated: true)
+            } else {
+                AVCaptureDevice.requestAccess(for: .video) { granted in
+                    DispatchQueue.main.async {
+                        if granted {
+                            imagePicker.delegate = self
+                            imagePicker.sourceType = .photoLibrary
+                            self.present(imagePicker, animated: true)
+                        } else {
+                            //TODO: Permissions not granted take user to settings
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func cameraImagePickerAction(_ sender: Any) {
