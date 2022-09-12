@@ -52,11 +52,11 @@
                                                 </button>
                                             </barButtonItem>
                                             <barButtonItem style="plain" id="1PN-zm-K0Y">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DGA-on-SJN">
-                                                    <rect key="frame" x="256.5" y="5" width="75" height="34.5"/>
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DGA-on-SJN">
+                                                    <rect key="frame" x="256.5" y="5" width="85" height="34.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
                                                     <connections>
                                                         <action selector="saveButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CP2-Qi-lZp"/>
                                                     </connections>
@@ -96,6 +96,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

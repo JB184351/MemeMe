@@ -161,7 +161,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     }
     
     func save() {
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: generateMemedImage())
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memeImage: generateMemedImage())
     }
     
     func generateMemedImage() -> UIImage {
