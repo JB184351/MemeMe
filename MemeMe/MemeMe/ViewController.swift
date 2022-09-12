@@ -12,11 +12,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
     
+    let topTextFieldDelegate = TopTextFieldDelegate()
+    let bottomTextFieldDelegate = BottomTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        topTextField.delegate = topTextFieldDelegate
+        bottomTextField.delegate = bottomTextFieldDelegate
+        configureTextAttributes()
+    }
+    
+    private func configureTextAttributes() {
+        
+        let strokeColor: UIColor = .black
+        let foregroundColor: UIColor = .white
+        let fontType: UIFont = UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
+        let strokeWidth = 6
+        
+        let memeTextAttributes: [NSAttributedString.Key: Any] = [
+            .strokeColor: strokeColor,
+            .foregroundColor: foregroundColor,
+            .font: fontType,
+            .strokeWidth: strokeWidth
+        ]
+        
+//        topTextField.contentHorizontalAlignment
+        topTextField.textAlignment = .center
+        
+//        bottomTextField.textAlignment = .center
+        
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
     }
 
     @IBAction func photoLibraryImagePickerAction(_ sender: Any) {
