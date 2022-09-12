@@ -40,11 +40,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
             .strokeWidth: strokeWidth
         ]
         
-//        topTextField.contentHorizontalAlignment
-        topTextField.textAlignment = .center
-        
-//        bottomTextField.textAlignment = .center
-        
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
     }
