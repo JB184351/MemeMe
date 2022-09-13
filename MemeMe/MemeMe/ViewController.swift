@@ -16,15 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
-    
-    let topTextFieldDelegate = TopTextFieldDelegate()
-    let bottomTextFieldDelegate = BottomTextFieldDelegate()
+    let memeTextFieldDelegate = MemeTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        topTextField.delegate = topTextFieldDelegate
-        bottomTextField.delegate = bottomTextFieldDelegate
+        topTextField.delegate = memeTextFieldDelegate
+        bottomTextField.delegate = memeTextFieldDelegate
         saveButton.isEnabled = false
         imageView.image = UIImage(named: "MemeGenerator_120 copy")
         configureTextAttributes()
