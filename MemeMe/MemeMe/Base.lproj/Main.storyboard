@@ -16,77 +16,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="m3D-Cg-ESI">
-                                <rect key="frame" x="8" y="114" width="414" height="738"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" verticalHuggingPriority="253" translatesAutoresizingMaskIntoConstraints="NO" id="J3d-Ng-SuW" userLabel="topToolBar">
+                                <rect key="frame" x="0.0" y="69" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="N1Y-VF-oHy"/>
+                                </items>
+                            </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-f4-iKh">
+                                <rect key="frame" x="0.0" y="113" width="414" height="695"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="600" translatesAutoresizingMaskIntoConstraints="NO" id="OUe-z5-72M" userLabel="toolBarStackView">
+                                <rect key="frame" x="20" y="113" width="374" height="640"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yp-LJ-ULp">
-                                        <rect key="frame" x="181" y="0.0" width="52" height="80"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yp-LJ-ULp">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="18.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-f4-iKh">
-                                        <rect key="frame" x="0.0" y="180" width="414" height="280"/>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="et3-3r-ZnR">
-                                        <rect key="frame" x="169" y="560" width="76" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="et3-3r-ZnR">
+                                        <rect key="frame" x="0.0" y="618.5" width="374" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-tO-NTv">
-                                        <rect key="frame" x="0.0" y="694" width="414" height="44"/>
-                                        <items>
-                                            <barButtonItem title="Pick a Photo" id="zBg-lG-E95">
-                                                <connections>
-                                                    <action selector="photoLibraryImagePickerAction:" destination="BYZ-38-t0r" id="kXf-u0-YbL"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Take a Picture" style="plain" id="es7-Nx-LN1">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mv3-EJ-iEN">
-                                                    <rect key="frame" x="125.5" y="5" width="131" height="34.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Take a Picture"/>
-                                                    <connections>
-                                                        <action selector="cameraImagePickerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfK-LL-Ium"/>
-                                                    </connections>
-                                                </button>
-                                            </barButtonItem>
-                                            <barButtonItem style="plain" id="1PN-zm-K0Y">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DGA-on-SJN">
-                                                    <rect key="frame" x="256.5" y="5" width="85" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="saveButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CP2-Qi-lZp"/>
-                                                    </connections>
-                                                </button>
-                                            </barButtonItem>
-                                        </items>
-                                    </toolbar>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="d9T-tO-NTv" firstAttribute="leading" secondItem="m3D-Cg-ESI" secondAttribute="leading" id="6fD-7T-XAg"/>
-                                    <constraint firstAttribute="trailing" secondItem="d9T-tO-NTv" secondAttribute="trailing" id="nTd-89-Eag"/>
-                                    <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="et3-3r-ZnR" secondAttribute="bottom" constant="100" id="rzM-qB-myU"/>
-                                    <constraint firstAttribute="bottom" secondItem="d9T-tO-NTv" secondAttribute="bottom" id="xkf-ui-Zcr"/>
-                                </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-tO-NTv" userLabel="bottomToolBar">
+                                <rect key="frame" x="0.0" y="808" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Pick a Photo" id="zBg-lG-E95">
+                                        <connections>
+                                            <action selector="photoLibraryImagePickerAction:" destination="BYZ-38-t0r" id="kXf-u0-YbL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Take a Picture" style="plain" id="es7-Nx-LN1">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mv3-EJ-iEN">
+                                            <rect key="frame" x="125.5" y="5" width="131" height="34.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Take a Picture"/>
+                                            <connections>
+                                                <action selector="cameraImagePickerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfK-LL-Ium"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m3D-Cg-ESI" secondAttribute="bottom" constant="10" id="1a1-pv-GFZ"/>
-                            <constraint firstItem="m3D-Cg-ESI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="Tj9-AV-Kal"/>
-                            <constraint firstItem="m3D-Cg-ESI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="8" id="fpt-4C-t4Q"/>
-                            <constraint firstItem="m3D-Cg-ESI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="mi8-hY-YSm"/>
+                            <constraint firstItem="J3d-Ng-SuW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DgC-Ri-AdO"/>
+                            <constraint firstItem="OUe-z5-72M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fmf-kh-Zyd"/>
+                            <constraint firstItem="OUe-z5-72M" firstAttribute="top" secondItem="J3d-Ng-SuW" secondAttribute="bottom" id="LfY-8N-Cyk"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mw2-lT-gvz"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QFS-kp-KjT"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="OUe-z5-72M" secondAttribute="bottom" constant="55" id="Yxv-XO-Vf3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OUe-z5-72M" secondAttribute="trailing" constant="20" id="ceo-Uk-Gwy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d9T-tO-NTv" secondAttribute="bottom" constant="10" id="eJQ-IG-4f7"/>
+                            <constraint firstItem="J3d-Ng-SuW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sBA-Cl-sA6"/>
+                            <constraint firstItem="J3d-Ng-SuW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="vlJ-T4-Fl2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="et3-3r-ZnR" id="yC5-Py-aQO"/>
                         <outlet property="cameraButton" destination="Mv3-EJ-iEN" id="MK8-bF-YWy"/>
                         <outlet property="imageView" destination="YUp-f4-iKh" id="2GV-Ot-Znb"/>
-                        <outlet property="saveButton" destination="DGA-on-SJN" id="h6E-4S-jNe"/>
                         <outlet property="topTextField" destination="1Yp-LJ-ULp" id="y1u-I7-CL8"/>
                     </connections>
                 </viewController>
@@ -96,7 +91,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
