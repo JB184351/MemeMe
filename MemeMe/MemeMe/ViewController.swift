@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         topTextField.delegate = topTextFieldDelegate
         bottomTextField.delegate = bottomTextFieldDelegate
         saveButton.isEnabled = false
+        imageView.image = UIImage(named: "MemeGenerator_120 copy")
         configureTextAttributes()
     }
     
