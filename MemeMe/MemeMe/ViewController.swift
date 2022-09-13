@@ -15,11 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
-    var isSharingSavingEnabled: Bool = false {
-        willSet {
-            saveButton.isEnabled = isSharingSavingEnabled
-        }
-    }
     
     
     let topTextFieldDelegate = TopTextFieldDelegate()
@@ -30,7 +25,7 @@ class ViewController: UIViewController {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         topTextField.delegate = topTextFieldDelegate
         bottomTextField.delegate = bottomTextFieldDelegate
-        isSharingSavingEnabled = imageView == nil
+        saveButton.isEnabled = false
         configureTextAttributes()
     }
     
@@ -188,6 +183,7 @@ class ViewController: UIViewController {
 extension ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        saveButton.isEnabled = false && imageView.image == nil
         self.dismiss(animated: true)
     }
     
@@ -196,6 +192,8 @@ extension ViewController: UIImagePickerControllerDelegate & UINavigationControll
             imageView.image = selectedImage
             imageView.contentMode = .scaleAspectFit
         }
+        
+        saveButton.isEnabled = true
         
         dismiss(animated: true)
     }
