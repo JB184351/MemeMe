@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    var isSharingSavingEnabled: Bool = false {
+        willSet {
+            saveButton.isEnabled = isSharingSavingEnabled
+        }
+    }
     
     
     let topTextFieldDelegate = TopTextFieldDelegate()
@@ -25,7 +30,7 @@ class ViewController: UIViewController {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         topTextField.delegate = topTextFieldDelegate
         bottomTextField.delegate = bottomTextFieldDelegate
-        saveButton.isEnabled = imageView.image == nil
+        isSharingSavingEnabled = imageView == nil
         configureTextAttributes()
     }
     
@@ -137,7 +142,9 @@ class ViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(_ notification: Notification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottomTextField.isEditing {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     private func getKeyboardHeight(_ notification: Notification) -> CGFloat {
