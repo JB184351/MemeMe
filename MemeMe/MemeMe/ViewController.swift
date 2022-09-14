@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     let memeTextFieldDelegate = MemeTextFieldDelegate()
     
@@ -67,7 +67,9 @@ class ViewController: UIViewController {
         // Quesiton, I don't understand the purpose of having this here, I know it was part of the project instructions
         // but what does this do?
         activityController.completionWithItemsHandler = { (activity, success, items, error) in
-            self.save()
+            if success {
+                self.save()
+            }
         }
     }
     
