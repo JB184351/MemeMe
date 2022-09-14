@@ -9,8 +9,9 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var photoLibraryButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
@@ -74,51 +75,58 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Image Picker Actions
-
+    
     @IBAction func photoLibraryImagePickerAction(_ sender: Any) {
+        pickImage(with: .photoLibrary)
+    }
+    
+    @IBAction func cameraImagePIckerAction(_ sender: Any) {
+        pickImage(with: .camera)
+    }
+    
+    
+    private func pickImage(with sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
-                imagePicker.delegate = self
-                imagePicker.sourceType = .photoLibrary
-                present(imagePicker, animated: true)
-            } else {
-                AVCaptureDevice.requestAccess(for: .video) { granted in
-                    DispatchQueue.main.async {
-                        if granted {
-                            imagePicker.delegate = self
-                            imagePicker.sourceType = .photoLibrary
-                            self.present(imagePicker, animated: true)
-                        } else {
-                            //TODO: Permissions not granted take user to settings
+        if sourceType == .photoLibrary {
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
+                    imagePicker.delegate = self
+                    imagePicker.sourceType = .photoLibrary
+                    present(imagePicker, animated: true)
+                } else {
+                    AVCaptureDevice.requestAccess(for: .video) { granted in
+                        DispatchQueue.main.async {
+                            if granted {
+                                imagePicker.delegate = self
+                                imagePicker.sourceType = .photoLibrary
+                                self.present(imagePicker, animated: true)
+                            } else {
+                                //TODO: Permissions not granted take user to settings
+                            }
                         }
                     }
                 }
             }
-        }
-    }
-    
-    @IBAction func cameraImagePickerAction(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        
-        if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                imagePicker.delegate = self
-                imagePicker.sourceType = .camera
-                present(imagePicker, animated: true)
-            }
-        } else {
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                DispatchQueue.main.async {
-                    if granted {
-                        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                            imagePicker.delegate = self
-                            imagePicker.sourceType = .camera
-                            self.present(imagePicker, animated: true)
+        } else if sourceType == .camera {
+            if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    imagePicker.delegate = self
+                    imagePicker.sourceType = .camera
+                    present(imagePicker, animated: true)
+                }
+            } else {
+                AVCaptureDevice.requestAccess(for: .video) { granted in
+                    DispatchQueue.main.async {
+                        if granted {
+                            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                                imagePicker.delegate = self
+                                imagePicker.sourceType = .camera
+                                self.present(imagePicker, animated: true)
+                            }
+                        } else {
+                            // TODO: Permissions not granted take user to settings
                         }
-                    } else {
-                        // TODO: Permissions not granted take user to settings
                     }
                 }
             }
@@ -139,7 +147,7 @@ class ViewController: UIViewController {
     
     @objc private func keyboardWillShow(_ notification: Notification) {
         if bottomTextField.isEditing {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
@@ -161,21 +169,21 @@ class ViewController: UIViewController {
     }
     
     func generateMemedImage() -> UIImage {
-
+        
         // TODO: Hide toolbar and navbar
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = true
-
+        
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-
+        
         // TODO: Show toolbar and navbar
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = false
-
+        
         return memedImage
     }
 }

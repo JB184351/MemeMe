@@ -2,12 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Need to use a saved image for a meme</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Need Camera to take images for meme creation</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Used for saving the meme to your photos</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Needed to use a saved image for a meme</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
