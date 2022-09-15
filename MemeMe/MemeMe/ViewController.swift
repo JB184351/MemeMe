@@ -54,6 +54,8 @@ class ViewController: UIViewController {
         
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.textAlignment = .center
+        bottomTextField.textAlignment = .center
     }
     
     // MARK: - Enables app to save/share meme
@@ -64,8 +66,6 @@ class ViewController: UIViewController {
         let activityController = UIActivityViewController(activityItems: [savedMeme], applicationActivities: nil)
         present(activityController, animated: true)
         
-        // Quesiton, I don't understand the purpose of having this here, I know it was part of the project instructions
-        // but what does this do?
         activityController.completionWithItemsHandler = { (activity, success, items, error) in
             if success {
                 self.save()
