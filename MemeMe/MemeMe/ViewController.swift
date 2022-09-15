@@ -87,44 +87,22 @@ class ViewController: UIViewController {
     private func pickImage(with sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         
-        if sourceType == .photoLibrary {
+        if sourceType == sourceType {
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
                     imagePicker.delegate = self
-                    imagePicker.sourceType = .photoLibrary
+                    imagePicker.sourceType = sourceType
                     present(imagePicker, animated: true)
                 } else {
                     AVCaptureDevice.requestAccess(for: .video) { granted in
                         DispatchQueue.main.async {
                             if granted {
                                 imagePicker.delegate = self
-                                imagePicker.sourceType = .photoLibrary
+                                imagePicker.sourceType = sourceType
                                 self.present(imagePicker, animated: true)
                             } else {
                                 //TODO: Permissions not granted take user to settings
                             }
-                        }
-                    }
-                }
-            }
-        } else if sourceType == .camera {
-            if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
-                if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                    imagePicker.delegate = self
-                    imagePicker.sourceType = .camera
-                    present(imagePicker, animated: true)
-                }
-            } else {
-                AVCaptureDevice.requestAccess(for: .video) { granted in
-                    DispatchQueue.main.async {
-                        if granted {
-                            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                                imagePicker.delegate = self
-                                imagePicker.sourceType = .camera
-                                self.present(imagePicker, animated: true)
-                            }
-                        } else {
-                            // TODO: Permissions not granted take user to settings
                         }
                     }
                 }
