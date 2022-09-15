@@ -147,7 +147,6 @@ class ViewController: UIViewController {
     
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = true
         
@@ -157,7 +156,6 @@ class ViewController: UIViewController {
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // TODO: Show toolbar and navbar
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = false
         
