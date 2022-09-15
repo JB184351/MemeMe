@@ -27,24 +27,14 @@
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-f4-iKh">
-                                <rect key="frame" x="0.0" y="113" width="414" height="695"/>
+                                <rect key="frame" x="0.0" y="81" width="414" height="727"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="600" translatesAutoresizingMaskIntoConstraints="NO" id="OUe-z5-72M" userLabel="toolBarStackView">
-                                <rect key="frame" x="20" y="88" width="374" height="665"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yp-LJ-ULp">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="18.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="et3-3r-ZnR">
-                                        <rect key="frame" x="0.0" y="618.5" width="374" height="46.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="et3-3r-ZnR">
+                                <rect key="frame" x="20" y="726.5" width="374" height="61.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-tO-NTv" userLabel="bottomToolBar">
                                 <rect key="frame" x="0.0" y="808" width="414" height="44"/>
                                 <items>
@@ -66,18 +56,26 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yp-LJ-ULp">
+                                <rect key="frame" x="20" y="108" width="374" height="18.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Yp-LJ-ULp" secondAttribute="trailing" constant="20" id="0PM-wI-9jl"/>
+                            <constraint firstItem="et3-3r-ZnR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C5R-B0-m94"/>
                             <constraint firstItem="J3d-Ng-SuW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DgC-Ri-AdO"/>
-                            <constraint firstItem="OUe-z5-72M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fmf-kh-Zyd"/>
-                            <constraint firstItem="OUe-z5-72M" firstAttribute="top" secondItem="J3d-Ng-SuW" secondAttribute="bottom" id="LfY-8N-Cyk"/>
+                            <constraint firstItem="1Yp-LJ-ULp" firstAttribute="top" secondItem="J3d-Ng-SuW" secondAttribute="bottom" constant="20" id="GZu-2d-DGV"/>
                             <constraint firstItem="d9T-tO-NTv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mw2-lT-gvz"/>
+                            <constraint firstItem="et3-3r-ZnR" firstAttribute="top" relation="lessThanOrEqual" secondItem="1Yp-LJ-ULp" secondAttribute="bottom" constant="600" id="Ok2-5K-47l"/>
                             <constraint firstItem="d9T-tO-NTv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QFS-kp-KjT"/>
-                            <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="OUe-z5-72M" secondAttribute="bottom" constant="55" id="Yxv-XO-Vf3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OUe-z5-72M" secondAttribute="trailing" constant="20" id="ceo-Uk-Gwy"/>
+                            <constraint firstItem="1Yp-LJ-ULp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XWb-ac-pDt"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="et3-3r-ZnR" secondAttribute="bottom" constant="20" id="dOM-pT-Grx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d9T-tO-NTv" secondAttribute="bottom" constant="10" id="eJQ-IG-4f7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="et3-3r-ZnR" secondAttribute="trailing" constant="20" id="gSV-Tj-aNy"/>
                             <constraint firstItem="J3d-Ng-SuW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sBA-Cl-sA6"/>
                             <constraint firstItem="J3d-Ng-SuW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vlJ-T4-Fl2"/>
                         </constraints>

@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         topTextField.delegate = memeTextFieldDelegate
         bottomTextField.delegate = memeTextFieldDelegate
         saveButton.isEnabled = false
-        imageView.image = UIImage(named: "MemeGenerator_120 copy")
+        imageView.image = UIImage(named: "MemeGenerator_180 copy")
         configureTextAttributes()
     }
     
@@ -40,17 +40,16 @@ class ViewController: UIViewController {
     }
     
     private func configureTextAttributes() {
-        
         let strokeColor: UIColor = .black
         let foregroundColor: UIColor = .white
         let fontType: UIFont = UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
-        let strokeWidth = 6
+        let strokeWidth = -3.5
         
         let memeTextAttributes: [NSAttributedString.Key: Any] = [
             .strokeColor: strokeColor,
             .foregroundColor: foregroundColor,
             .font: fontType,
-            .strokeWidth: strokeWidth
+            .strokeWidth: strokeWidth,
         ]
         
         topTextField.defaultTextAttributes = memeTextAttributes
