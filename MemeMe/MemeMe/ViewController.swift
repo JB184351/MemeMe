@@ -22,11 +22,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        topTextField.delegate = memeTextFieldDelegate
-        bottomTextField.delegate = memeTextFieldDelegate
         saveButton.isEnabled = false
         imageView.image = UIImage(named: "MemeGenerator_180 copy")
-        configureTextAttributes()
+        configureTextAttributes(topTextField)
+        configureTextAttributes(bottomTextField)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +38,7 @@ class ViewController: UIViewController {
         unsubscribedFromKeyboardNotifications()
     }
     
-    private func configureTextAttributes() {
+    private func configureTextAttributes(_ textField: UITextField) {
         let strokeColor: UIColor = .black
         let foregroundColor: UIColor = .white
         let fontType: UIFont = UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
@@ -52,10 +51,9 @@ class ViewController: UIViewController {
             .strokeWidth: strokeWidth,
         ]
         
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.delegate = memeTextFieldDelegate
+        textField.textAlignment = .center
     }
     
     // MARK: - Enables app to save/share meme
@@ -86,28 +84,9 @@ class ViewController: UIViewController {
     
     private func pickImage(with sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
-        
-        if sourceType == sourceType {
-            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-                if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
-                    imagePicker.delegate = self
-                    imagePicker.sourceType = sourceType
-                    present(imagePicker, animated: true)
-                } else {
-                    AVCaptureDevice.requestAccess(for: .video) { granted in
-                        DispatchQueue.main.async {
-                            if granted {
-                                imagePicker.delegate = self
-                                imagePicker.sourceType = sourceType
-                                self.present(imagePicker, animated: true)
-                            } else {
-                                //TODO: Permissions not granted take user to settings
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true)
     }
     
     // MARK: - Keyboard Notifications
@@ -147,8 +126,8 @@ class ViewController: UIViewController {
     
     func generateMemedImage() -> UIImage {
         
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -156,8 +135,8 @@ class ViewController: UIViewController {
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        self.tabBarController?.tabBar.isHidden = false
-        self.navigationController?.navigationBar.isHidden = false
+        tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
         
         return memedImage
     }
