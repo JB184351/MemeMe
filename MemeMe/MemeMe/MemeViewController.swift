@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class MemeViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var photoLibraryButton: UIBarButtonItem!
@@ -143,7 +143,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
-extension ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+extension MemeViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         saveButton.isEnabled = false && imageView.image == nil
