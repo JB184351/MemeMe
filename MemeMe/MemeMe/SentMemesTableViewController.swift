@@ -23,7 +23,12 @@ class SentMemesTableViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func createMemeAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let memeViewController = storyboard.instantiateViewController(withIdentifier: "memeViewController") as! MemeViewController
+        navigationController?.pushViewController(memeViewController, animated: true)
+    }
 }
 
 extension SentMemesTableViewController: UITableViewDataSource {

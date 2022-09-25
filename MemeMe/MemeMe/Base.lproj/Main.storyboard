@@ -12,7 +12,7 @@
         <!--Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="memeViewController" id="BYZ-38-t0r" customClass="MemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Take a Picture"/>
                                             <connections>
-                                                <action selector="cameraImagePIckerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IBd-cs-D7N"/>
+                                                <action selector="cameraImagePIckerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rgo-S6-7hM"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -86,7 +86,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="et3-3r-ZnR" id="yC5-Py-aQO"/>
-                        <outlet property="cameraButton" destination="Mv3-EJ-iEN" id="MK8-bF-YWy"/>
+                        <outlet property="cameraButton" destination="Mv3-EJ-iEN" id="ftm-Ab-VL2"/>
                         <outlet property="imageView" destination="YUp-f4-iKh" id="2GV-Ot-Znb"/>
                         <outlet property="photoLibraryButton" destination="zBg-lG-E95" id="d2d-KO-VfG"/>
                         <outlet property="saveButton" destination="N1Y-VF-oHy" id="RrG-z5-ptR"/>
@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="99.776785714285708"/>
+            <point key="canvasLocation" x="499" y="411"/>
         </scene>
         <!--Sent Memes Collection View Controller-->
         <scene sceneID="yvp-8D-FzD">
@@ -169,7 +169,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UNr-hY-rtY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ugo-Xi-PAV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ugo-Xi-PAV">
+                            <connections>
+                                <action selector="createMemeAction:" destination="zoq-6E-xkR" id="4cI-cV-JCC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="sentMemesTableView" destination="0zL-Mm-EqJ" id="crY-bC-BLr"/>
