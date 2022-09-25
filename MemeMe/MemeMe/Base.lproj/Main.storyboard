@@ -135,7 +135,9 @@
                             <constraint firstItem="UB3-ZT-sw6" firstAttribute="top" secondItem="j8I-3q-QPX" secondAttribute="top" id="ngt-KV-iUD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nLQ-jQ-Thj"/>
+                    <navigationItem key="navigationItem" id="nLQ-jQ-Thj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pnp-Hl-zxs"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="memeCollectionView" destination="UB3-ZT-sw6" id="xTH-JP-sKt"/>
                     </connections>
@@ -166,7 +168,9 @@
                             <constraint firstItem="0zL-Mm-EqJ" firstAttribute="top" secondItem="Lsm-pn-MpO" secondAttribute="top" id="y2j-BT-Nt3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UNr-hY-rtY"/>
+                    <navigationItem key="navigationItem" id="UNr-hY-rtY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ugo-Xi-PAV"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="sentMemesTableView" destination="0zL-Mm-EqJ" id="crY-bC-BLr"/>
                     </connections>
