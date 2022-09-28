@@ -17,11 +17,18 @@ class SentMemesTableViewController: UIViewController {
     let sentMemesTableViewCellIdentifier = "sentMemesTableViewCell"
     @IBOutlet weak var sentMemesTableView: UITableView!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.sentMemesTableView.dataSource = self
+        self.sentMemesTableView.delegate = self
+        self.sentMemesTableView.register(SentMemesTableViewCell.self, forCellReuseIdentifier: sentMemesTableViewCellIdentifier)
+        sentMemesTableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.sentMemesTableView.delegate = self
+        sentMemesTableView.reloadData()
     }
     
     @IBAction func createMemeAction(_ sender: Any) {
@@ -39,7 +46,7 @@ extension SentMemesTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: sentMemesTableViewCellIdentifier) as! SentMemesTableViewCell
         let meme = memes[indexPath.row]
-        cell.memeImage.image = meme.memeImage
+        cell.setup(with: meme)
         return cell
     }
     

@@ -24,7 +24,8 @@ class SentMemesCollectionViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        
+        memeCollectionView.dataSource = self
+        memeCollectionView.delegate = self
         setupCollectionViewFlowLayout()
     }
     

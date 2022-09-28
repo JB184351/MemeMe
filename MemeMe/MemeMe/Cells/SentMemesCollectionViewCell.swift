@@ -15,5 +15,9 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    public func setup(with model: Meme) {
+        memeImage.image = model.memeImage
+    }
 
 }
