@@ -22,7 +22,7 @@ class SentMemesTableViewController: UIViewController {
         super.viewDidLoad()
         self.sentMemesTableView.dataSource = self
         self.sentMemesTableView.delegate = self
-        self.sentMemesTableView.register(SentMemesTableViewCell.self, forCellReuseIdentifier: sentMemesTableViewCellIdentifier)
+        self.sentMemesTableView.register(SentMemesTableViewCell.nib, forCellReuseIdentifier: sentMemesTableViewCellIdentifier)
         sentMemesTableView.reloadData()
     }
     
@@ -54,5 +54,7 @@ extension SentMemesTableViewController: UITableViewDataSource {
 }
 
 extension SentMemesTableViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
+    }
 }

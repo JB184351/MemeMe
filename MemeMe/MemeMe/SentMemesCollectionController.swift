@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SentMemesCollectionViewController: UIViewController {
+class SentMemesCollectionController: UIViewController {
     
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
@@ -41,7 +41,7 @@ class SentMemesCollectionViewController: UIViewController {
     }
 }
 
-extension SentMemesCollectionViewController: UICollectionViewDataSource {
+extension SentMemesCollectionController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
@@ -56,6 +56,6 @@ extension SentMemesCollectionViewController: UICollectionViewDataSource {
     
 }
 
-extension SentMemesCollectionViewController: UICollectionViewDelegate {
+extension SentMemesCollectionController: UICollectionViewDelegate {
     
 }
