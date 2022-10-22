@@ -55,6 +55,6 @@ extension SentMemesTableViewController: UITableViewDataSource {
 
 extension SentMemesTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50.0
+        return 150
     }
 }

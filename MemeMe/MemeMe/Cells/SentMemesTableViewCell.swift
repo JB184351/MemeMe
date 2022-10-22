@@ -10,6 +10,8 @@ import UIKit
 class SentMemesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var memeTopTextLabel: UILabel!
+    @IBOutlet weak var memeBottomTextLabel: UILabel!
     
     static var identifier: String {
         return String(describing: self)
@@ -22,6 +24,8 @@ class SentMemesTableViewCell: UITableViewCell {
     
     public func setup(with model: Meme) {
         memeImage.image = model.memeImage
+        memeTopTextLabel.text = model.topText
+        memeBottomTextLabel.text = model.bottomText
     }
     
 }
