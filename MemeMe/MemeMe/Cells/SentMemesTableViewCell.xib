@@ -20,7 +20,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wuu-XL-aW4" userLabel="Meme Detail Stack View">
                         <rect key="frame" x="0.0" y="0.0" width="421" height="161"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="sentMemesTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="TAU-Sx-cQy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="sentMemesTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="TAU-Sx-cQy">
                                 <rect key="frame" x="0.0" y="0.0" width="210.5" height="161"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="02r-fb-XSX" userLabel="Meme Text Stack View">

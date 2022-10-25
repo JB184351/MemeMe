@@ -87,11 +87,13 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="et3-3r-ZnR" id="yC5-Py-aQO"/>
+                        <outlet property="bottomToolBar" destination="d9T-tO-NTv" id="CfC-62-Zhc"/>
                         <outlet property="cameraButton" destination="Mv3-EJ-iEN" id="ftm-Ab-VL2"/>
                         <outlet property="imageView" destination="YUp-f4-iKh" id="2GV-Ot-Znb"/>
                         <outlet property="photoLibraryButton" destination="zBg-lG-E95" id="d2d-KO-VfG"/>
                         <outlet property="saveButton" destination="N1Y-VF-oHy" id="RrG-z5-ptR"/>
                         <outlet property="topTextField" destination="1Yp-LJ-ULp" id="y1u-I7-CL8"/>
+                        <outlet property="topToolBar" destination="J3d-Ng-SuW" id="tL9-vh-tES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

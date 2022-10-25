@@ -16,6 +16,8 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var topToolBar: UIToolbar!
+    @IBOutlet weak var bottomToolBar: UIToolbar!
     
     let memeTextFieldDelegate = MemeTextFieldDelegate()
     
@@ -132,6 +134,8 @@ class MemeViewController: UIViewController {
         
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = true
+        topToolBar.isHidden = true
+        bottomToolBar.isHidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -141,6 +145,8 @@ class MemeViewController: UIViewController {
         
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.isHidden = false
+        topToolBar.isHidden = false
+        bottomToolBar.isHidden = false
         
         return memedImage
     }
