@@ -21,12 +21,18 @@ class SentMemesCollectionController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView()
+        registerCollectionViewCell()
+        memeCollectionView.reloadData()
     }
     
     private func setupCollectionView() {
         memeCollectionView.dataSource = self
         memeCollectionView.delegate = self
         setupCollectionViewFlowLayout()
+    }
+    
+    private func registerCollectionViewCell() {
+        memeCollectionView.register(SentMemesCollectionViewCell.nib, forCellWithReuseIdentifier: sentMemesCollectionViewCellIdentifier)
     }
     
     private func setupCollectionViewFlowLayout() {

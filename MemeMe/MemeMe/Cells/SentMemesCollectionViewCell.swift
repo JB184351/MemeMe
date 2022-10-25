@@ -16,6 +16,14 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
+    static var nib: UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+    
     public func setup(with model: Meme) {
         memeImage.image = model.memeImage
     }
