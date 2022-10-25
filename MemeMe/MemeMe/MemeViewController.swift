@@ -122,7 +122,7 @@ class MemeViewController: UIViewController {
     
     // MARK: - Methods for saving/sharing the meme
     
-    func save() {
+    private func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memeImage: generateMemedImage())
         
         let object = UIApplication.shared.delegate
@@ -130,12 +130,9 @@ class MemeViewController: UIViewController {
         appDelegate.memes.append(meme)
     }
     
-    func generateMemedImage() -> UIImage {
+    private func generateMemedImage() -> UIImage {
         
-        tabBarController?.tabBar.isHidden = true
-        navigationController?.navigationBar.isHidden = true
-        topToolBar.isHidden = true
-        bottomToolBar.isHidden = true
+        toggleWhatIsHidden()
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -143,12 +140,16 @@ class MemeViewController: UIViewController {
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        tabBarController?.tabBar.isHidden = false
-        navigationController?.navigationBar.isHidden = false
-        topToolBar.isHidden = false
-        bottomToolBar.isHidden = false
+        toggleWhatIsHidden()
         
         return memedImage
+    }
+    
+    private func toggleWhatIsHidden() {
+        tabBarController?.tabBar.isHidden = !(tabBarController?.tabBar.isHidden ?? true)
+        navigationController?.navigationBar.isHidden = !(navigationController?.navigationBar.isHidden ?? true)
+        topToolBar.isHidden = !topToolBar.isHidden
+        bottomToolBar.isHidden = !bottomToolBar.isHidden
     }
 }
 
