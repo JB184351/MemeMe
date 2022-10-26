@@ -25,25 +25,18 @@ class SentMemesCollectionController: UIViewController {
         memeCollectionView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        memeCollectionView.reloadData()
+    }
+    
     private func setupCollectionView() {
         memeCollectionView.dataSource = self
         memeCollectionView.delegate = self
-        setupCollectionViewFlowLayout()
     }
     
     private func registerCollectionViewCell() {
         memeCollectionView.register(SentMemesCollectionViewCell.nib, forCellWithReuseIdentifier: sentMemesCollectionViewCellIdentifier)
-    }
-    
-    private func setupCollectionViewFlowLayout() {
-        let space:CGFloat = 3.0
-        let dimension = (view.frame.size.width - (2 * space)) / 3.0
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
 }
 
@@ -63,5 +56,26 @@ extension SentMemesCollectionController: UICollectionViewDataSource {
 }
 
 extension SentMemesCollectionController: UICollectionViewDelegate {
+    
+}
+
+extension SentMemesCollectionController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width / 3.0
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     
 }
