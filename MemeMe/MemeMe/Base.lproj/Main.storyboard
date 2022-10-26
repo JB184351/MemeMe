@@ -208,11 +208,11 @@
             </objects>
             <point key="canvasLocation" x="-1959" y="192"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="SxP-kU-eKn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZNg-jv-m1a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" selectedImage="table_30x30" id="PZU-db-b4D"/>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="table_30x30" id="PZU-db-b4D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GRN-TK-ygD">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -227,11 +227,11 @@
             </objects>
             <point key="canvasLocation" x="-1133.3333333333335" y="139.95535714285714"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="Uul-BW-Aef">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6g1-6Q-aPl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" selectedImage="collection_30x30" id="2x4-gI-AM1"/>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="collection_30x30" id="2x4-gI-AM1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CLL-1Y-obg">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
