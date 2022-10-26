@@ -131,7 +131,6 @@ class MemeViewController: UIViewController {
     }
     
     private func generateMemedImage() -> UIImage {
-        
         toggleWhatIsHidden()
         
         // Render view to an image

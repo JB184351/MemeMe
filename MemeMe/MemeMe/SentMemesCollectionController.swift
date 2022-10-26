@@ -40,6 +40,7 @@ class SentMemesCollectionController: UIViewController {
     }
 }
 
+//MARK: - CollectionViewDataSource
 extension SentMemesCollectionController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
@@ -55,10 +56,7 @@ extension SentMemesCollectionController: UICollectionViewDataSource {
     
 }
 
-extension SentMemesCollectionController: UICollectionViewDelegate {
-    
-}
-
+//MARK: - CollectionViewDelegateFlowLayout
 extension SentMemesCollectionController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
