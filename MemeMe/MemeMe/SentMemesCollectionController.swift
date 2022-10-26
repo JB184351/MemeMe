@@ -38,6 +38,13 @@ class SentMemesCollectionController: UIViewController {
     private func registerCollectionViewCell() {
         memeCollectionView.register(SentMemesCollectionViewCell.nib, forCellWithReuseIdentifier: sentMemesCollectionViewCellIdentifier)
     }
+    
+    
+    @IBAction func createMemeAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let memeViewController = storyboard.instantiateViewController(withIdentifier: "memeViewController") as! MemeViewController
+        navigationController?.pushViewController(memeViewController, animated: true)
+    }
 }
 
 //MARK: - CollectionViewDataSource

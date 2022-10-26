@@ -139,7 +139,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nLQ-jQ-Thj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pnp-Hl-zxs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pnp-Hl-zxs">
+                            <connections>
+                                <action selector="createMemeAction:" destination="hUx-7E-tg4" id="NhP-Sq-IK1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="memeCollectionView" destination="UB3-ZT-sw6" id="xTH-JP-sKt"/>
