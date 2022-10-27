@@ -49,6 +49,7 @@ class SentMemesCollectionController: UIViewController {
 
 //MARK: - CollectionViewDataSource
 extension SentMemesCollectionController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
@@ -59,7 +60,6 @@ extension SentMemesCollectionController: UICollectionViewDataSource {
         cell.memeImage.image = meme.memeImage
         return cell
     }
-    
     
 }
 

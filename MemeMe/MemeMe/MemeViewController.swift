@@ -87,7 +87,6 @@ class MemeViewController: UIViewController {
         pickImage(with: .camera)
     }
     
-    
     private func pickImage(with sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -96,7 +95,6 @@ class MemeViewController: UIViewController {
     }
     
     // MARK: - Keyboard Notifications
-    
     private func subscribedToKeyboardNotificaitons() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -125,7 +123,6 @@ class MemeViewController: UIViewController {
     }
     
     // MARK: - Methods for saving/sharing the meme
-    
     private func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memeImage: generateMemedImage())
         
@@ -174,5 +171,6 @@ extension MemeViewController: UIImagePickerControllerDelegate & UINavigationCont
         
         dismiss(animated: true)
     }
+    
 }
 

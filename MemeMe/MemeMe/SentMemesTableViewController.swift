@@ -39,6 +39,7 @@ class SentMemesTableViewController: UIViewController {
 }
 
 extension SentMemesTableViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
     }
@@ -50,10 +51,10 @@ extension SentMemesTableViewController: UITableViewDataSource {
         return cell
     }
     
-    
 }
 
 extension SentMemesTableViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
