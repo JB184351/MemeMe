@@ -73,6 +73,10 @@ class MemeViewController: UIViewController {
         }
     }
     
+    @IBAction func cancelButtonAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - Image Picker Actions
     
     @IBAction func photoLibraryImagePickerAction(_ sender: Any) {

@@ -29,29 +29,43 @@
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-f4-iKh">
-                                <rect key="frame" x="0.0" y="92" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="725"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="et3-3r-ZnR">
-                                <rect key="frame" x="20" y="730.5" width="374" height="57.5"/>
+                                <rect key="frame" x="20" y="730.5" width="374" height="82.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-tO-NTv" userLabel="bottomToolBar">
-                                <rect key="frame" x="0.0" y="808" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="817" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="baH-Qd-5V1"/>
+                                </constraints>
                                 <items>
-                                    <barButtonItem title="Pick a Photo" id="zBg-lG-E95">
+                                    <barButtonItem title="Pick a Photo" image="photo.artframe" catalog="system" id="zBg-lG-E95">
                                         <connections>
                                             <action selector="photoLibraryImagePickerAction:" destination="BYZ-38-t0r" id="958-7Y-yWi"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Take a Picture" style="plain" id="es7-Nx-LN1">
+                                    <barButtonItem title="Take a Picture" image="camera" catalog="system" style="plain" id="es7-Nx-LN1">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mv3-EJ-iEN">
-                                            <rect key="frame" x="125.5" y="5" width="131" height="34.5"/>
+                                            <rect key="frame" x="55.5" y="5.5" width="131" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Take a Picture"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system"/>
                                             <connections>
                                                 <action selector="cameraImagePIckerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rgo-S6-7hM"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem title="Cancel" style="plain" id="ycX-Dm-ti1">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Q1a-Xx-00H">
+                                            <rect key="frame" x="186.5" y="5.5" width="76.5" height="34.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                            <connections>
+                                                <action selector="cancelButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x7A-u9-Pp6"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -72,16 +86,16 @@
                             <constraint firstItem="J3d-Ng-SuW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DgC-Ri-AdO"/>
                             <constraint firstItem="YUp-f4-iKh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Eew-Xu-Vlw"/>
                             <constraint firstItem="1Yp-LJ-ULp" firstAttribute="top" secondItem="J3d-Ng-SuW" secondAttribute="bottom" constant="20" id="GZu-2d-DGV"/>
-                            <constraint firstItem="d9T-tO-NTv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mw2-lT-gvz"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Hvp-1G-sJk"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="et3-3r-ZnR" secondAttribute="bottom" constant="4" id="JHt-3S-zno"/>
                             <constraint firstItem="et3-3r-ZnR" firstAttribute="top" relation="lessThanOrEqual" secondItem="1Yp-LJ-ULp" secondAttribute="bottom" constant="600" id="Ok2-5K-47l"/>
-                            <constraint firstItem="d9T-tO-NTv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QFS-kp-KjT"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q0j-q4-iwH"/>
                             <constraint firstItem="1Yp-LJ-ULp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XWb-ac-pDt"/>
-                            <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="YUp-f4-iKh" secondAttribute="bottom" id="Za0-lu-Rjn"/>
-                            <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="et3-3r-ZnR" secondAttribute="bottom" constant="20" id="dOM-pT-Grx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d9T-tO-NTv" secondAttribute="bottom" constant="10" id="eJQ-IG-4f7"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="top" secondItem="YUp-f4-iKh" secondAttribute="bottom" id="eNz-rs-lIC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="et3-3r-ZnR" secondAttribute="trailing" constant="20" id="gSV-Tj-aNy"/>
                             <constraint firstItem="YUp-f4-iKh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hBq-gw-2HI"/>
                             <constraint firstItem="J3d-Ng-SuW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sBA-Cl-sA6"/>
+                            <constraint firstItem="d9T-tO-NTv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uaf-j9-Pqt"/>
                             <constraint firstItem="J3d-Ng-SuW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vlJ-T4-Fl2"/>
                         </constraints>
                     </view>
@@ -156,7 +170,7 @@
         <!--Sent Memes Table View Controller-->
         <scene sceneID="wMt-Xd-oCm">
             <objects>
-                <viewController id="zoq-6E-xkR" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sentMemesTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zoq-6E-xkR" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pYC-Nj-qmE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,7 +262,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="93"/>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="collection_30x30" width="30" height="30"/>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="table_30x30" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
