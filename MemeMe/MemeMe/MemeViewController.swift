@@ -24,6 +24,7 @@ class MemeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        hideCameraWhenRunningOnSimulator()
         saveButton.isEnabled = false
         imageView.image = UIImage(named: "MemeGenerator_180 copy")
         configureTextAttributes(topTextField)
@@ -56,6 +57,14 @@ class MemeViewController: UIViewController {
         textField.defaultTextAttributes = memeTextAttributes
         textField.delegate = memeTextFieldDelegate
         textField.textAlignment = .center
+    }
+    
+    private func hideCameraWhenRunningOnSimulator() {
+        #if targetEnvironment(simulator)
+        cameraButton.isEnabled = false
+            #else
+            cameraButton.isEnabled = true
+        #endif
     }
     
     // MARK: - Enables app to save/share meme
@@ -146,10 +155,10 @@ class MemeViewController: UIViewController {
     }
     
     private func toggleWhatIsHidden() {
-        tabBarController?.tabBar.isHidden = !(tabBarController?.tabBar.isHidden ?? true)
-        navigationController?.navigationBar.isHidden = !(navigationController?.navigationBar.isHidden ?? true)
-        topToolBar.isHidden = !topToolBar.isHidden
-        bottomToolBar.isHidden = !bottomToolBar.isHidden
+        tabBarController?.tabBar.isHidden.toggle()
+        navigationController?.navigationBar.isHidden.toggle()
+        topToolBar.isHidden.toggle()
+        bottomToolBar.isHidden.toggle()
     }
 }
 
@@ -158,7 +167,7 @@ extension MemeViewController: UIImagePickerControllerDelegate & UINavigationCont
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         saveButton.isEnabled = false && imageView.image == nil
-        self.dismiss(animated: true)
+        dismiss(animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
