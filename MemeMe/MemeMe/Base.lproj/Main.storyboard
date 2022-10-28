@@ -59,7 +59,7 @@
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem title="Cancel" style="plain" id="ycX-Dm-ti1">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Q1a-Xx-00H">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Q1a-Xx-00H">
                                             <rect key="frame" x="186.5" y="5.5" width="76.5" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
@@ -113,6 +113,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="499" y="411"/>
+        </scene>
+        <!--Display Meme View Controller-->
+        <scene sceneID="x3b-zp-yq5">
+            <objects>
+                <viewController storyboardIdentifier="displayMemeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yKf-l8-aFG" customClass="DisplayMemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1BP-Pr-as5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="utr-TT-bnf">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hG3-E5-5y6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hG3-E5-5y6" firstAttribute="trailing" secondItem="utr-TT-bnf" secondAttribute="trailing" id="9Bk-l5-8GO"/>
+                            <constraint firstItem="utr-TT-bnf" firstAttribute="leading" secondItem="hG3-E5-5y6" secondAttribute="leading" id="Q7L-q5-b6G"/>
+                            <constraint firstItem="utr-TT-bnf" firstAttribute="top" secondItem="hG3-E5-5y6" secondAttribute="top" id="e4Y-uS-71j"/>
+                            <constraint firstItem="hG3-E5-5y6" firstAttribute="bottom" secondItem="utr-TT-bnf" secondAttribute="bottom" id="seb-zH-zVr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="memeImageView" destination="utr-TT-bnf" id="3pF-gV-zhs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jg8-KR-pss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="410"/>
         </scene>
         <!--Sent Memes Collection Controller-->
         <scene sceneID="yvp-8D-FzD">

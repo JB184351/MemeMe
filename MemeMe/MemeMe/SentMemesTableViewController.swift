@@ -15,6 +15,7 @@ class SentMemesTableViewController: UIViewController {
         return appDelegate.memes
     }
     let sentMemesTableViewCellIdentifier = "sentMemesTableViewCell"
+    let displayMemeViewControllerIdentifier = "displayMemeViewController"
     @IBOutlet weak var sentMemesTableView: UITableView!
     
     
@@ -57,5 +58,13 @@ extension SentMemesTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let meme = memes[indexPath.row]
+        
+        let displayMemeViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: displayMemeViewControllerIdentifier) as! DisplayMemeViewController
+        displayMemeViewController.image = meme.memeImage
+        self.navigationController?.pushViewController(displayMemeViewController, animated: true)
     }
 }

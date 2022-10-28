@@ -15,6 +15,7 @@ class SentMemesCollectionController: UIViewController {
         return appDelegate.memes
     }
     @IBOutlet weak var memeCollectionView: UICollectionView!
+    let displayMemeViewControllerIdentifier = "displayMemeViewController"
     let sentMemesCollectionViewCellIdentifier = "sentMemesCollectionViewCell"
     
     override func viewDidLoad() {
@@ -61,6 +62,18 @@ extension SentMemesCollectionController: UICollectionViewDataSource {
         return cell
     }
     
+}
+
+//MARK: - CollectionViewDelegate
+extension SentMemesCollectionController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let meme = memes[indexPath.row]
+        
+        let displayMemeViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: displayMemeViewControllerIdentifier) as! DisplayMemeViewController
+        displayMemeViewController.image = meme.memeImage
+        self.navigationController?.pushViewController(displayMemeViewController, animated: true)
+    }
 }
 
 //MARK: - CollectionViewDelegateFlowLayout
